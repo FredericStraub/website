@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}" type="text/css">
+    <title>test</title>
+</head>
+<body>
+    <h1>Comunicate with us</h1>
+<div class="container">
+
+    <form method="POST">
+        <p>Rate us<p>
+      
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="ratting" id="flexRadioDefault1" value = "very bad">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Very bad
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="ratting" id="flexRadioDefault2" value = "bad">
+            <label class="form-check-label" for="flexRadioDefault2">
+              Bad
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="ratting" id="flexRadioDefault3" value = "average">
+            <label class="form-check-label" for="flexRadioDefault3">
+              Average
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="ratting" id="flexRadioDefault4" value = "good">
+            <label class="form-check-label" for="flexRadioDefault4">
+              Good
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="ratting" id="flexRadioDefault5" value = "very good" checked>
+            <label class="form-check-label" for="flexRadioDefault5">
+              Very Good
+            </label>
+          </div>
+
+
+<!--   
+      <input type="checkbox" name = "one" value="very bad" id="one">
+      <label for="one"> very bad</label><br>
+      <input type="checkbox" name = "two" value="bad" id="two">
+      <label for="two"> bad</label><br>
+      <input type="checkbox" name = "three" value="average" id="three">
+      <label for="three">average</label><br>
+      <input type="checkbox" name = "four" value="good" id="four">
+      <label for="foul">good</label><br>
+      <input type="checkbox" name = "five" value="very good" id="five">
+      <label for="five">very good</label><br> -->
+
+      <p><label for="feedback_field">Leave your feedback</label></p>
+
+      
+      
+      <div class="col-75">    
+        <textarea id="feedback_field" name="subject" value = feedback placeholder="feedback" style="height:200px"></textarea>  
+   
+      </div> 
+        
+      
+
+      <input type="submit" value="submit">
+  
+    </form>
+  </div>
+  
+</body>
