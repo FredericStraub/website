@@ -15,6 +15,18 @@
     </head>
     <body>
         <form method ="POST" style="border:1px solid #ccc">
+            {% block content %}
+            <div class="container">
+                {% for message in get_flashed_messages() %}
+                <div class="alert alert-warning">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                     {{ message }}
+                </div>
+                {% endfor %}
+
+                {% block page_content %}{% endblock %}
+            </div>
+            {% endblock %}
             <div class="container">
                 <h1>Create Account</h1>
                 <p>Please fill in this form to create an account.</p>
@@ -51,9 +63,9 @@
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault3" value = "Prefere not to say" checked>
+                    <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault3" value = "Prefer not to say" checked>
                     <label class="form-check-label" for="flexRadioDefault3">
-                      Prefere not to say
+                      Prefer not to say
                     </label>
                   </div>
                 <!-- <div class="gender">

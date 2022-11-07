@@ -12,6 +12,18 @@
 
     <body>
         <form method ="POST" style="border:1px solid #ccc">
+            {% block content %}
+            <div class="container">
+                {% for message in get_flashed_messages() %}
+                <div class="alert alert-warning">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                     {{ message }}
+                </div>
+                {% endfor %}
+
+                {% block page_content %}{% endblock %}
+            </div>
+            {% endblock %}
             <div class="container">
                 <h1>Settings</h1>
                 <p>Make changes.</p>
@@ -23,8 +35,11 @@
                 <label for="psw"><b>Enter Current Password</b></label>
                 <input type="password" placeholder="Enter Current Password" name="current password" required>
 
-                <label for="psw-repeat"><b>Repeat Password</b></label>
-                <input type="password" placeholder="Repeat Password" name="repeat new password" required>
+                <label for="psw-new"><b>Enter New Password</b></label>
+                <input type="password" placeholder="Enter New Password" name="enter new password" required>
+
+                <label for="psw-repeat"><b>Repeat New Password</b></label>
+                <input type="password" placeholder="Repeat New Password" name="repeat new password" required>
                 <input type="submit" name = "cancel button"  value = "cancel" class="btn btn-primary">
                 <input type="submit" name = "save" value = "save" class="btn btn-danger">
                 

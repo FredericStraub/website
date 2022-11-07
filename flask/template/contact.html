@@ -10,34 +10,46 @@
 <div class="container">
 
     <form method="POST">
+        {% block content %}
+        <div class="container">
+          {% for message in get_flashed_messages() %}
+          <div class="alert alert-warning">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ message }}
+          </div>
+          {% endfor %}
+
+          {% block page_content %}{% endblock %}
+        </div>
+        {% endblock %}
         <p>Rate us<p>
       
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="ratting" id="flexRadioDefault1" value = "very bad">
+            <input class="form-check-input" type="radio" name="rating" id="flexRadioDefault1" value = "very bad">
             <label class="form-check-label" for="flexRadioDefault1">
               Very bad
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="ratting" id="flexRadioDefault2" value = "bad">
+            <input class="form-check-input" type="radio" name="rating" id="flexRadioDefault2" value = "bad">
             <label class="form-check-label" for="flexRadioDefault2">
               Bad
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="ratting" id="flexRadioDefault3" value = "average">
+            <input class="form-check-input" type="radio" name="rating" id="flexRadioDefault3" value = "average">
             <label class="form-check-label" for="flexRadioDefault3">
               Average
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="ratting" id="flexRadioDefault4" value = "good">
+            <input class="form-check-input" type="radio" name="rating" id="flexRadioDefault4" value = "good">
             <label class="form-check-label" for="flexRadioDefault4">
               Good
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="ratting" id="flexRadioDefault5" value = "very good" checked>
+            <input class="form-check-input" type="radio" name="rating" id="flexRadioDefault5" value = "very good" checked>
             <label class="form-check-label" for="flexRadioDefault5">
               Very Good
             </label>
