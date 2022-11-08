@@ -242,6 +242,7 @@ def settings():
                 encripted_new_pw = Encrypt(new_pw)
                 connection(f"update customer set password = '{encripted_new_pw}' where email = '{enter_email}'", getResult=False)
                 flash('Your password is successfully changed.')
+                return redirect(url_for('index12'))
             else:
                 flash('Repeated password is not the same as new password.')
         elif session['email'] != enter_email:
