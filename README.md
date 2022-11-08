@@ -136,7 +136,7 @@ def forgot():
             return redirect(url_for('forgot'))
     return render_template('forgot.html')
 ```
-In case anyone tries to access the forgot page while logged in (by for example, trying to access it by typing /forgot after the link), python will first check whether there is an active session with if ‘email’ in session. If this is the case they will be redirected to their home page and a message will pop up that says they are already logged in. The next elif statement will check whether the inserted email address exists in the database, if it does not the user will see a message that says that the email address does not exist and stay on the forgot page. 
+In case anyone tries to access the forgot page while logged in (for example, by typing /forgot after the link), python will first check whether there is an active session with if ‘email’ in session. If this is the case they will be redirected to their home page and a message will pop up that says they are already logged in. The next elif statement will check whether the inserted email address exists in the database, if it does not the user will see a message that says that the email address does not exist and stay on the forgot page. 
 If the email address exists and the two inserted passwords match, the row in the customer table in SQL for this email address will be updated with the new encrypted password. If the two inserted passwords do not match, a message will pop up giving the user this information. 
 
 ## Setting page
