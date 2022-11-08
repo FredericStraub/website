@@ -170,7 +170,7 @@ def settings():
 First python will check if there is not an active session with *if not ‘email’ in session*. In case nobody is logged in, it will return the user to the login page and flash this message: 'You are not logged in yet. Login to access your settings.' After that, it will check whether there is an active session and whether this matches with the inserted current password. In this if statement, python will then check whether the two inserted new passwords match. If they do, the customer table will be updated in SQL with the new encrypted password. The user will be redirected to their homepage and see a message that confirms the update. If their two inserted passwords do not match, the session’s email address and inserted email address do not match or the current password does not match with the email address they will get messages on the same settings page.
 
 ## Flash messages in pages
-In order for html to show the flash messages called in python with *flash()* we need to create this (potential) code of text in the pages itself.
+In the html files for the pages create account, forgot password, index12, login and settings an extra block of code was needed to be able to show the messages in *flash()* used in python. This block of code is only used when the function *flash()*  is called:
 ```python
 {% block content %}
 <div class="container">
