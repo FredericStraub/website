@@ -139,7 +139,7 @@ def forgot():
 In case anyone tries to access the forgot page while logged in (for example, by typing /forgot after the link), python will first check whether there is an active session with if ‘email’ in session. If this is the case they will be redirected to their home page and a message will pop up that says they are already logged in. The next elif statement will check whether the inserted email address exists in the database, if it does not the user will see a message that says that the email address does not exist and stay on the forgot page. 
 If the email address exists and the two inserted passwords match, the row in the customer table in SQL for this email address will be updated with the new encrypted password. If the two inserted passwords do not match, a message will pop up giving the user this information. 
 
-## Setting page
+## Settings page
 ```python
 @app.route('/settings', methods=['GET', 'POST'])
 def settings():
@@ -170,7 +170,7 @@ def settings():
 First python will check if there is not an active session with *if not ‘email’ in session*. In case nobody is logged in, it will return the user to the login page and flash this message: 'You are not logged in yet. Login to access your settings.' After that, it will check whether there is an active session and whether this matches with the inserted current password. In this if statement, python will then check whether the two inserted new passwords match. If they do, the customer table will be updated in SQL with the new encrypted password. The user will be redirected to their homepage and see a message that confirms the update. If their two inserted passwords do not match, the session’s email address and inserted email address do not match or the current password does not match with the email address they will get messages on the same settings page.
 
 ## Flash messages in pages
-In the html files for the pages create account, forgot password, index12, login and settings an extra block of code was needed to be able to show the messages in *flash()* used in python. This block of code is only used when the function *flash()*  is called:
+In the html files, for the pages create_account, forgot_password, index12, login and settings, an extra block of code was needed to be able to show the messages in *flash()* used in python. This block of code is only used when the function *flash()*  is called:
 ```python
 {% block content %}
 <div class="container">
