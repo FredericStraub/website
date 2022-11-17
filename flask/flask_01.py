@@ -111,6 +111,9 @@ def index():
 def upload():
     if request.method == 'POST':
 
+        if "Back" in request.form:
+            return redirect(url_for('index12'))
+
         image = request.files["image"]
         sound = request.files["sound"]
         if 'customer_id' in session:
@@ -161,6 +164,8 @@ def upload():
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     if request.method == "POST":
+        if "Back" in request.form:
+            return redirect(url_for('index12'))
         # print(request.form)
         feedback_score = request.form['rating']
         feedback = 'No'
@@ -246,6 +251,8 @@ def forgot():
 
 @app.route('/library', methods=['GET', 'POST'])
 def library():
+    if "Back" in request.form:
+        return redirect(url_for('index12'))
     if 'customer_id' in session:
         if not os.path.exists(f"template/static/images/{session['customer_id']}"):
             os.makedirs(f"template/static/images/{session['customer_id']}")
@@ -313,8 +320,11 @@ def index12():
         elif request.form.get("loginnew") == "Log out":
             session.clear()
             return redirect(url_for('login'))
-
-    return render_template('index12.html')
+        Ela = '/images/employees/Ela.jpeg'
+        Frediric = '/images/employees/Frediric.jpeg'
+        Jason = '/images/employees/Jason.jpeg'
+        Kyriakos = '/images/employees/Kyriakos.jpeg'
+    return render_template('index12.html') #, Ela = Ela, Frediric = Frediric, Jason = Jason, Kyriakos = Kyriakos)
 
 
 @app.route('/login', methods=['GET', 'POST'])
