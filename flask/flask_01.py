@@ -320,11 +320,7 @@ def index12():
         elif request.form.get("loginnew") == "Log out":
             session.clear()
             return redirect(url_for('login'))
-        Ela = '/images/employees/Ela.jpeg'
-        Frediric = '/images/employees/Frediric.jpeg'
-        Jason = '/images/employees/Jason.jpeg'
-        Kyriakos = '/images/employees/Kyriakos.jpeg'
-    return render_template('index12.html') #, Ela = Ela, Frediric = Frediric, Jason = Jason, Kyriakos = Kyriakos)
+    return render_template('index12.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
