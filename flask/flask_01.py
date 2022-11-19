@@ -17,9 +17,11 @@ Session(app)
 
 
 def connection(query, getResult=True):
-    s = 'DESKTOP-7R8HL94\SQLEXPRESS'  # Your server name
+    s = 'DESKTOP-7R8HL94\SQLEXPRESS'  # Ela's server name
+    s = 'DESKTOP-EGO85AB\SQLEXPRESS' # Jason's server name
     d = 'website'  # database
-    u = 'Ege'  # Your login
+    u = 'Ege'  # Ela's login
+    u = 'jason' # jason's login
     p = '123'  # Your login password
     cstr = 'DRIVER={ODBC Driver 17 for SQL Server};SERVER=' + s + ';DATABASE=' + d + ';UID=' + u + ';PWD=' + p
     conn = pyodbc.connect(cstr)
