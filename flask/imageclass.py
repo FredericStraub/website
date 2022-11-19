@@ -37,8 +37,9 @@ def predict(file):
         logits = outputs.logits
         # model predicts one of the 21,841 ImageNet-22k classes
         predicted_class_idx = logits.argmax(-1).item()
-        print("Predicted class:", model.config.id2label[predicted_class_idx])
-        return
+        result = model.config.id2label[predicted_class_idx].split(",")[0]
+        #print("Predicted class:", result)
+        return result
     else:
         graph_spectrogram(file)
         image = Image.open("spectrogram.jpg")
@@ -51,7 +52,8 @@ def predict(file):
         predicted_class_idx = logits.argmax(-1).item()
         # since i saved the spectrogram file in the same dir i am deleting it here prob have do edit this depending where and how we run the code 
         # os.remove("spectrogram.jpg")
-        print("Predicted class:", model.config.id2label[predicted_class_idx])
-        return
+        result = model.config.id2label[predicted_class_idx].split(",")[0]
+        #print("Predicted class:", result)
+        return result
 
 predict(audio)
